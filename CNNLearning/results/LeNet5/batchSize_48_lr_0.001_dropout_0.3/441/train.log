@@ -1,0 +1,424 @@
+Early stopping: patience = 5, val_interval = 10, delta = 0.001
+==> use gpu id: 0
+==> Obtain supervised dataset
+train dataset size (samples × weight × height × channel): (40000, 3, 32, 32)
+valid dataset size (samples × weight × height × channel): (10000, 3, 32, 32)
+test dataset size (samples × weight × height × channel): (10000, 3, 32, 32)
+labels name: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+==> Build network
+network structure: LeNet5(
+  (C1): Sequential(
+    (0): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU()
+  )
+  (S2): Sequential(
+    (0): MaxPool2d(kernel_size=(2, 2), stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (C3): Sequential(
+    (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU()
+  )
+  (S4): Sequential(
+    (0): MaxPool2d(kernel_size=(2, 2), stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (C5): Sequential(
+    (0): Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU()
+  )
+  (F6): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=120, out_features=84, bias=True)
+    (2): ReLU()
+    (3): Linear(in_features=84, out_features=10, bias=True)
+  )
+  (LeNet5): Sequential(
+    (0): Sequential(
+      (0): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU()
+    )
+    (1): Sequential(
+      (0): MaxPool2d(kernel_size=(2, 2), stride=2, padding=0, dilation=1, ceil_mode=False)
+    )
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Sequential(
+      (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU()
+    )
+    (4): Sequential(
+      (0): MaxPool2d(kernel_size=(2, 2), stride=2, padding=0, dilation=1, ceil_mode=False)
+    )
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Sequential(
+      (0): Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU()
+    )
+    (7): Sequential(
+      (0): Flatten(start_dim=1, end_dim=-1)
+      (1): Linear(in_features=120, out_features=84, bias=True)
+      (2): ReLU()
+      (3): Linear(in_features=84, out_features=10, bias=True)
+    )
+  )
+)
+==> Build loss and optimizer
+==> Training with validation dataset
+Epoch: 1; loss: 1.8701328260721348
+Epoch: 1; val_precision: 0.407
+Epoch: 2; loss: 1.5962504402910778
+Epoch: 2; val_precision: 0.4789
+Epoch: 3; loss: 1.523124969262871
+Epoch: 3; val_precision: 0.4705
+Epoch: 4; loss: 1.4711323935065053
+Epoch: 4; val_precision: 0.4979
+Epoch: 5; loss: 1.4390662427571752
+Epoch: 5; val_precision: 0.5045
+Epoch: 6; loss: 1.4075629461011727
+Epoch: 6; val_precision: 0.5262
+Epoch: 7; loss: 1.382421696214653
+Epoch: 7; val_precision: 0.5253
+Epoch: 8; loss: 1.355753386120716
+Epoch: 8; val_precision: 0.5383
+Epoch: 9; loss: 1.3420577497362234
+Epoch: 9; val_precision: 0.5533
+Epoch: 10; loss: 1.3212621711569725
+Epoch: 10; val_precision: 0.5499
+Epoch: 11; loss: 1.310809584187089
+Epoch: 11; val_precision: 0.5512
+Epoch: 12; loss: 1.2984064234246453
+Epoch: 12; val_precision: 0.5675
+Epoch: 13; loss: 1.2863793962007517
+Epoch: 13; val_precision: 0.5797
+Epoch: 14; loss: 1.2732635634980327
+Epoch: 14; val_precision: 0.5642
+Epoch: 15; loss: 1.254191209372285
+Epoch: 15; val_precision: 0.5751
+Epoch: 16; loss: 1.248099951220931
+Epoch: 16; val_precision: 0.5858
+Epoch: 17; loss: 1.2423368146379503
+Epoch: 17; val_precision: 0.5835
+Epoch: 18; loss: 1.2345344149094406
+Epoch: 18; val_precision: 0.5803
+Epoch: 19; loss: 1.2152109499172055
+Epoch: 19; val_precision: 0.5967
+Epoch: 20; loss: 1.214356144698118
+Epoch: 20; val_precision: 0.5929
+Epoch: 21; loss: 1.2148795502363063
+Epoch: 21; val_precision: 0.5937
+Epoch: 22; loss: 1.2005178829748853
+Epoch: 22; val_precision: 0.588
+Epoch: 23; loss: 1.2056630959184906
+Epoch: 23; val_precision: 0.5855
+Epoch: 24; loss: 1.1929067802800835
+Epoch: 24; val_precision: 0.6002
+Epoch: 25; loss: 1.186868917813404
+Epoch: 25; val_precision: 0.5924
+Epoch: 26; loss: 1.1811968773531971
+Epoch: 26; val_precision: 0.6038
+Epoch: 27; loss: 1.1654328893986252
+Epoch: 27; val_precision: 0.5941
+Epoch: 28; loss: 1.173604471935071
+Epoch: 28; val_precision: 0.616
+Epoch: 29; loss: 1.1736583859085752
+Epoch: 29; val_precision: 0.5776
+Epoch: 30; loss: 1.1741050610439383
+Epoch: 30; val_precision: 0.6055
+Epoch: 31; loss: 1.1612192679652207
+Epoch: 31; val_precision: 0.6066
+Epoch: 32; loss: 1.1545316429732801
+Epoch: 32; val_precision: 0.6182
+Epoch: 33; loss: 1.1541770878169748
+Epoch: 33; val_precision: 0.6252
+Epoch: 34; loss: 1.1399534941434288
+Epoch: 34; val_precision: 0.6091
+Epoch: 35; loss: 1.1490440978277787
+Epoch: 35; val_precision: 0.6182
+Epoch: 36; loss: 1.1370932076045934
+Epoch: 36; val_precision: 0.6204
+Epoch: 37; loss: 1.1405706873042978
+Epoch: 37; val_precision: 0.6058
+Epoch: 38; loss: 1.1321828543282242
+Epoch: 38; val_precision: 0.5963
+Epoch: 39; loss: 1.1261114219395663
+Epoch: 39; val_precision: 0.6207
+Epoch: 40; loss: 1.1215731482282818
+Epoch: 40; val_precision: 0.6248
+Epoch: 41; loss: 1.1230856804110163
+Epoch: 41; val_precision: 0.5854
+Epoch: 42; loss: 1.120111389769067
+Epoch: 42; val_precision: 0.5794
+Epoch: 43; loss: 1.1266499459028816
+Epoch: 43; val_precision: 0.6227
+Epoch: 44; loss: 1.1148092836784802
+Epoch: 44; val_precision: 0.5831
+Epoch: 45; loss: 1.1132760973428364
+Epoch: 45; val_precision: 0.6109
+Epoch: 46; loss: 1.1211970190493037
+Epoch: 46; val_precision: 0.5861
+Epoch: 47; loss: 1.10501148517755
+Epoch: 47; val_precision: 0.6246
+Epoch: 48; loss: 1.104593320144452
+Epoch: 48; val_precision: 0.6128
+Epoch: 49; loss: 1.1014970538856315
+Epoch: 49; val_precision: 0.6211
+Epoch: 50; loss: 1.0966566519485674
+Epoch: 50; val_precision: 0.6317
+Epoch: 51; loss: 1.098223083739658
+Epoch: 51; val_precision: 0.6289
+Epoch: 52; loss: 1.093962637712058
+Epoch: 52; val_precision: 0.6152
+Epoch: 53; loss: 1.0881239618900582
+Epoch: 53; val_precision: 0.6253
+Epoch: 54; loss: 1.0960832195316288
+Epoch: 54; val_precision: 0.6283
+Epoch: 55; loss: 1.0794872179877557
+Epoch: 55; val_precision: 0.5928
+Epoch: 56; loss: 1.0908268025453143
+Epoch: 56; val_precision: 0.6078
+Epoch: 57; loss: 1.088788799244723
+Epoch: 57; val_precision: 0.6122
+Epoch: 58; loss: 1.0810766153627163
+Epoch: 58; val_precision: 0.6218
+Epoch: 59; loss: 1.0884716318522711
+Epoch: 59; val_precision: 0.6136
+Epoch: 60; loss: 1.0774321117990022
+Epoch: 60; val_precision: 0.6281
+Epoch: 61; loss: 1.073062411243681
+Epoch: 61; val_precision: 0.6346
+Epoch: 62; loss: 1.0759312171730206
+Epoch: 62; val_precision: 0.6206
+Epoch: 63; loss: 1.0689253274628299
+Epoch: 63; val_precision: 0.6179
+Epoch: 64; loss: 1.0726875174674484
+Epoch: 64; val_precision: 0.6349
+Epoch: 65; loss: 1.0731204154965974
+Epoch: 65; val_precision: 0.6041
+Epoch: 66; loss: 1.068990122785957
+Epoch: 66; val_precision: 0.6424
+Epoch: 67; loss: 1.0745844843862153
+Epoch: 67; val_precision: 0.6215
+Epoch: 68; loss: 1.0740985259306517
+Epoch: 68; val_precision: 0.628
+Epoch: 69; loss: 1.060803236721231
+Epoch: 69; val_precision: 0.6289
+Epoch: 70; loss: 1.059729910368542
+Epoch: 70; val_precision: 0.635
+Epoch: 71; loss: 1.060400794664447
+Epoch: 71; val_precision: 0.6102
+Epoch: 72; loss: 1.0655601421991985
+Epoch: 72; val_precision: 0.607
+Epoch: 73; loss: 1.065929283555463
+Epoch: 73; val_precision: 0.621
+Epoch: 74; loss: 1.0630422501112347
+Epoch: 74; val_precision: 0.6375
+Epoch: 75; loss: 1.0484621954335869
+Epoch: 75; val_precision: 0.6417
+Epoch: 76; loss: 1.056440891336194
+Epoch: 76; val_precision: 0.6459
+Epoch: 77; loss: 1.0524081667121366
+Epoch: 77; val_precision: 0.627
+Epoch: 78; loss: 1.046735684791629
+Epoch: 78; val_precision: 0.6367
+Epoch: 79; loss: 1.0653574822617948
+Epoch: 79; val_precision: 0.6034
+Epoch: 80; loss: 1.0608639017426424
+Epoch: 80; val_precision: 0.6074
+Epoch: 81; loss: 1.0564646316375093
+Epoch: 81; val_precision: 0.6361
+Epoch: 82; loss: 1.0539432735465986
+Epoch: 82; val_precision: 0.6385
+Epoch: 83; loss: 1.048031465255385
+Epoch: 83; val_precision: 0.6377
+Epoch: 84; loss: 1.0481518401230554
+Epoch: 84; val_precision: 0.6296
+Epoch: 85; loss: 1.0430000302888793
+Epoch: 85; val_precision: 0.6337
+Epoch: 86; loss: 1.0511523348679073
+Epoch: 86; val_precision: 0.6399
+Epoch: 87; loss: 1.0447323651050777
+Epoch: 87; val_precision: 0.635
+Epoch: 88; loss: 1.0382368237637787
+Epoch: 88; val_precision: 0.622
+Epoch: 89; loss: 1.0514044000519265
+Epoch: 89; val_precision: 0.6409
+Epoch: 90; loss: 1.0406258380670341
+Epoch: 90; val_precision: 0.6494
+Epoch: 91; loss: 1.0419724798030991
+Epoch: 91; val_precision: 0.6438
+Epoch: 92; loss: 1.0395994855345583
+Epoch: 92; val_precision: 0.6253
+Epoch: 93; loss: 1.0397548893515727
+Epoch: 93; val_precision: 0.6386
+Epoch: 94; loss: 1.0252779607506965
+Epoch: 94; val_precision: 0.619
+Epoch: 95; loss: 1.0327730498296752
+Epoch: 95; val_precision: 0.6202
+Epoch: 96; loss: 1.0405401612500207
+Epoch: 96; val_precision: 0.6239
+Epoch: 97; loss: 1.0316534420426229
+Epoch: 97; val_precision: 0.6303
+Epoch: 98; loss: 1.0346531294804397
+Epoch: 98; val_precision: 0.6176
+Epoch: 99; loss: 1.0227129133485204
+Epoch: 99; val_precision: 0.6299
+Epoch: 100; loss: 1.0287195214693494
+Epoch: 100; val_precision: 0.6428
+Epoch: 101; loss: 1.0218968170581104
+Epoch: 101; val_precision: 0.6517
+Epoch: 102; loss: 1.037221659430497
+Epoch: 102; val_precision: 0.6368
+Epoch: 103; loss: 1.0329578774009678
+Epoch: 103; val_precision: 0.6375
+Epoch: 104; loss: 1.0226614911922163
+Epoch: 104; val_precision: 0.6436
+Epoch: 105; loss: 1.0260433079384499
+Epoch: 105; val_precision: 0.6156
+Epoch: 106; loss: 1.0348160351208933
+Epoch: 106; val_precision: 0.6165
+Epoch: 107; loss: 1.0281836587033397
+Epoch: 107; val_precision: 0.6366
+Epoch: 108; loss: 1.025254930237786
+Epoch: 108; val_precision: 0.6346
+Epoch: 109; loss: 1.020620785457053
+Epoch: 109; val_precision: 0.6453
+Epoch: 110; loss: 1.0244550161796222
+Epoch: 110; val_precision: 0.6388
+Epoch: 111; loss: 1.0161694770665477
+Epoch: 111; val_precision: 0.6312
+Epoch: 112; loss: 1.018052657802614
+Epoch: 112; val_precision: 0.6379
+Epoch: 113; loss: 1.0308351122218071
+Epoch: 113; val_precision: 0.6532
+Epoch: 114; loss: 1.0166751801681748
+Epoch: 114; val_precision: 0.6427
+Epoch: 115; loss: 1.024818092012863
+Epoch: 115; val_precision: 0.6433
+Epoch: 116; loss: 1.021456340305525
+Epoch: 116; val_precision: 0.658
+Epoch: 117; loss: 1.0158258983843047
+Epoch: 117; val_precision: 0.6449
+Epoch: 118; loss: 1.023758007932624
+Epoch: 118; val_precision: 0.641
+Epoch: 119; loss: 1.0111396928771224
+Epoch: 119; val_precision: 0.6456
+Epoch: 120; loss: 1.0126194895314369
+Epoch: 120; val_precision: 0.6384
+Epoch: 121; loss: 1.0140894972306076
+Epoch: 121; val_precision: 0.6324
+Epoch: 122; loss: 1.0167503877223538
+Epoch: 122; val_precision: 0.6097
+Epoch: 123; loss: 1.0201544263165632
+Epoch: 123; val_precision: 0.6542
+Epoch: 124; loss: 1.0060041617932651
+Epoch: 124; val_precision: 0.6239
+Epoch: 125; loss: 1.0103233673518224
+Epoch: 125; val_precision: 0.6405
+Epoch: 126; loss: 1.0075230429069602
+Epoch: 126; val_precision: 0.6346
+Epoch: 127; loss: 1.0208204673777381
+Epoch: 127; val_precision: 0.6369
+Epoch: 128; loss: 1.0146035624207925
+Epoch: 128; val_precision: 0.6136
+Epoch: 129; loss: 1.0124727098775996
+Epoch: 129; val_precision: 0.6511
+Epoch: 130; loss: 1.0185860459753078
+Epoch: 130; val_precision: 0.6385
+Epoch: 131; loss: 1.0095135063576184
+Epoch: 131; val_precision: 0.6422
+Epoch: 132; loss: 1.00611114262534
+Epoch: 132; val_precision: 0.6086
+Epoch: 133; loss: 1.0060637133727544
+Epoch: 133; val_precision: 0.6205
+Epoch: 134; loss: 1.0061002165007649
+Epoch: 134; val_precision: 0.6393
+Epoch: 135; loss: 1.0063657768481642
+Epoch: 135; val_precision: 0.6576
+Epoch: 136; loss: 1.0069043288270918
+Epoch: 136; val_precision: 0.6556
+Epoch: 137; loss: 1.0139829596455434
+Epoch: 137; val_precision: 0.6493
+Epoch: 138; loss: 1.008622817355666
+Epoch: 138; val_precision: 0.651
+Epoch: 139; loss: 1.0018174237341617
+Epoch: 139; val_precision: 0.6143
+Epoch: 140; loss: 1.0035011995253231
+Epoch: 140; val_precision: 0.6536
+Epoch: 141; loss: 0.9999444381796199
+Epoch: 141; val_precision: 0.6211
+Epoch: 142; loss: 1.0038090200304128
+Epoch: 142; val_precision: 0.6352
+Epoch: 143; loss: 1.0025920887931075
+Epoch: 143; val_precision: 0.6206
+Epoch: 144; loss: 1.0019279166663007
+Epoch: 144; val_precision: 0.6365
+Epoch: 145; loss: 1.002117169203518
+Epoch: 145; val_precision: 0.6425
+Epoch: 146; loss: 0.9995963091044118
+Epoch: 146; val_precision: 0.6398
+Epoch: 147; loss: 0.9994148521257533
+Epoch: 147; val_precision: 0.6497
+Epoch: 148; loss: 1.0013522237753696
+Epoch: 148; val_precision: 0.6424
+Epoch: 149; loss: 0.9962812777188756
+Epoch: 149; val_precision: 0.6507
+Epoch: 150; loss: 0.9984316031138102
+Epoch: 150; val_precision: 0.6234
+Epoch: 151; loss: 1.004356140391432
+Epoch: 151; val_precision: 0.6359
+Epoch: 152; loss: 1.0014515951525964
+Epoch: 152; val_precision: 0.6379
+Epoch: 153; loss: 1.0035607121545347
+Epoch: 153; val_precision: 0.6482
+Epoch: 154; loss: 0.9996357782424496
+Epoch: 154; val_precision: 0.6252
+Epoch: 155; loss: 0.9964365797648899
+Epoch: 155; val_precision: 0.6448
+Epoch: 156; loss: 0.9983820805160833
+Epoch: 156; val_precision: 0.6403
+Epoch: 157; loss: 1.0080462469399976
+Epoch: 157; val_precision: 0.6327
+Epoch: 158; loss: 0.9964453558341491
+Epoch: 158; val_precision: 0.6261
+Epoch: 159; loss: 0.9921738541097664
+Epoch: 159; val_precision: 0.6407
+Epoch: 160; loss: 1.0035598798335599
+Epoch: 160; val_precision: 0.6598
+Epoch: 161; loss: 1.004086566843289
+Epoch: 161; val_precision: 0.6564
+Epoch: 162; loss: 0.9914412842951804
+Epoch: 162; val_precision: 0.6366
+Epoch: 163; loss: 1.0052636289339272
+Epoch: 163; val_precision: 0.6444
+Epoch: 164; loss: 0.9958753642990149
+Epoch: 164; val_precision: 0.627
+Epoch: 165; loss: 1.001015869547709
+Epoch: 165; val_precision: 0.6532
+Epoch: 166; loss: 0.9992972665267597
+Epoch: 166; val_precision: 0.6508
+Epoch: 167; loss: 1.0014628322004415
+Epoch: 167; val_precision: 0.6413
+Epoch: 168; loss: 0.9949769804374777
+Epoch: 168; val_precision: 0.6466
+Epoch: 169; loss: 0.9914303760734393
+Epoch: 169; val_precision: 0.6477
+Epoch: 170; loss: 1.0012402930062452
+Epoch: 170; val_precision: 0.6349
+==> Early stopping!
+==> Best epoch has been learned, which is 120
+==> Combine train and valid dataset
+==> Build new network
+==> Build new loss and optimizer
+==> Training with combined training dataset
+Epoch: 10; loss: 1.3082962298690701
+Epoch: 20; loss: 1.215671678822695
+Epoch: 30; loss: 1.1574932930565613
+Epoch: 40; loss: 1.1248463214931013
+Epoch: 50; loss: 1.0976165005661933
+Epoch: 60; loss: 1.0735087093259001
+Epoch: 70; loss: 1.0535790558167932
+Epoch: 80; loss: 1.0412732489163954
+Epoch: 90; loss: 1.031134330379757
+Epoch: 100; loss: 1.0225074828357477
+Epoch: 110; loss: 1.015298205007747
+Epoch: 120; loss: 1.0177801861186402
+==> Training complete!
